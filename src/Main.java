@@ -17,11 +17,11 @@ public class Main {
             switch (opcion) {//aqui 
                 case 1://opcion 1, facer reserva, na cal a continuacion nos pide os datos.
                     System.out.print("Ingrese su nombre: ");
-                    String nombre = scanner.nextLine();
+                    String nombre = scanner.nextLine();//guardamos nombre.
                     System.out.print("Ingrese su teléfono: ");
-                    String telefono = scanner.nextLine();
+                    String telefono = scanner.nextLine();//guardamos telefono.
                     System.out.print("Ingrese la fecha y hora de la reserva (dd/mm/yyyy hh:mm): ");
-                    String fechaHora = scanner.nextLine();
+                    String fechaHora = scanner.nextLine();//guardamos fecha y hora.
                     Cliente cliente = new Cliente(nombre, telefono, fechaHora);
                     barberia.hacerReserva(cliente);
 
