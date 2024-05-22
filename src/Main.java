@@ -1,40 +1,48 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * Clase principal que contiene el menú de opciones para la barbería.
+ */
 public class Main {
+
+    /**
+     * Método principal que ejecuta el programa.
+     *
+     * @param args Argumentos de la línea de comandos.
+     */
     public static void main(String[] args) {
         Barberia barberia = new Barberia();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\nMenú:");//mostramos o menu por pantalla.
-            System.out.println("1. Hacer reserva");//mostramos opcion 1.
-            System.out.println("2. Mostrar reservas");//mostramos opcion 2.
-            System.out.println("3. Salir");//mostramos opcion 3.
+            System.out.println("\nMenú:");
+            System.out.println("1. Hacer reserva");
+            System.out.println("2. Mostrar reservas");
+            System.out.println("3. Salir");
             System.out.print("Seleccione una opción: ");
-            int opcion = scanner.nextInt();//o usuario elixe a opcion  desexada e o programa leea.
-            scanner.nextLine();  
+            int opcion = scanner.nextInt();
+            scanner.nextLine();
 
-            switch (opcion) {//aqui 
-                case 1://opcion 1, facer reserva, na cal a continuacion nos pide os datos.
+            switch (opcion) {
+                case 1:
                     System.out.print("Ingrese su nombre: ");
-                    String nombre = scanner.nextLine();//guardamos nombre.
+                    String nombre = scanner.nextLine();
                     System.out.print("Ingrese su teléfono: ");
-                    String telefono = scanner.nextLine();//guardamos telefono.
+                    String telefono = scanner.nextLine();
                     System.out.print("Ingrese la fecha y hora de la reserva (dd/mm/yyyy hh:mm): ");
-                    String fechaHora = scanner.nextLine();//guardamos fecha y hora.
+                    String fechaHora = scanner.nextLine();
                     Cliente cliente = new Cliente(nombre, telefono, fechaHora);
                     barberia.hacerReserva(cliente);
-
                     break;
 
-
-                case 2://opcion 2, mostrar reserva, na que podremos ver as reservas que xa estan feitas.
+                case 2:
                     barberia.mostrarReservas();
                     break;
-                case 3://opcion 3, salir, nesta opcion sairiamos do programa.
+                case 3:
                     System.out.println("Saliendo del sistema.");
                     return;
-                default://no caso de introducir un numero que non entra dentro das opcions o programaa lanzara un erro e pediranos que introduzcamos un novo numero.
+                default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
             }
         }
