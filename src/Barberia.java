@@ -1,20 +1,32 @@
-import java.util.ArrayList;
-
-public class Barberia {//declaramos a clase barberia na cal se van gardar as reservas.
+/**
+ * Clase que representa la barbería y maneja las reservas.
+ */
+class Barberia {
     private ArrayList<Cliente> listaReservas;
 
+    /**
+     * Constructor que inicializa la lista de reservas.
+     */
     public Barberia() {
-        listaReservas = new ArrayList<>();//creamos un arraylist xa que non sabemos cantos clientes reservaran, eso cun array normal seria complicado xa que ocuparia demasiado espacio.
+        listaReservas = new ArrayList<>();
     }
 
+    /**
+     * Realiza una reserva para un cliente.
+     *
+     * @param cliente El cliente para el cual se realiza la reserva.
+     */
     public void hacerReserva(Cliente cliente) {
         listaReservas.add(cliente);
         System.out.println("Reserva realizada para " + cliente.getNombre() + " el " + cliente.getFechaHora());
     }
 
-    public void mostrarReservas() {//aqui mostraranse as reservas ao pulsar o numero 2.
+    /**
+     * Muestra todas las reservas existentes.
+     */
+    public void mostrarReservas() {
         if (listaReservas.isEmpty()) {
-            System.out.println("No hay reservas.");//en caso de non ter reservas o programa faranolo saber.
+            System.out.println("No hay reservas.");
         } else {
             System.out.println("Reservas:");
             for (Cliente cliente : listaReservas) {
