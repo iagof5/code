@@ -3,7 +3,7 @@
  */
 class Cliente {
     private String nombre;
-    private String telefono
+    private String telefono;
     private String fechaHora;
 
     /**
